@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MIDCOM_Tax
 {
-    public class MIDCOM
+    namespace MIDCOM
     {
         public enum TaxType { Percent, PerLitre };
 
