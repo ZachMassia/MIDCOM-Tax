@@ -112,12 +112,13 @@ namespace MIDCOM_Tax
                 {
                     StringBuilder output = new();
 
+                    // BLOCK 0 - 512
                     // First char must be a 'T'.
                     output.Append("TAX CARD FOR MIDCOM 8000. CREATED BY ZACH MASSIA.");
 
                     // Pad the remaining chars of first 512 char block.
                     output.Append('+', 510 - output.Length);     
-                    output.Append('\n');
+                    output.Append(Environment.NewLine);
 
                     // Add the 20 tax rates, no seperators or delimiters.
                     foreach (var t in Taxes)
@@ -126,8 +127,8 @@ namespace MIDCOM_Tax
                     }
 
                     // Pad remaining 352 chars.
-                    output.Append('+', 351);
-                    output.Append('\n');
+                    output.Append('+', 350);
+                    output.Append(Environment.NewLine);
 
                     // Add the 20 tax labels, no seperators or delimiters.
                     foreach (var t in Taxes)
@@ -136,8 +137,8 @@ namespace MIDCOM_Tax
                     }
 
                     // Pad remaining 212 chars.
-                    output.Append('+', 211);
-                    output.Append('\n');
+                    output.Append('+', 210);
+                    output.Append(Environment.NewLine);
 
                     // Add the 100 tax combinations.
                     // These must be entered in multiple blocks.
@@ -157,8 +158,8 @@ namespace MIDCOM_Tax
                             output.Append(Products[productIndex++].TaxCode);
                         }
                         // Add the 32 char pad.
-                        output.Append('+', 31);
-                        output.Append('\n');
+                        output.Append('+', 30);
+                        output.Append(Environment.NewLine);
                     }
 
                     // The final 4 combinations.
@@ -166,8 +167,8 @@ namespace MIDCOM_Tax
                     {
                         output.Append(Products[productIndex++].TaxCode);
                     }
-                    output.Append('+', 351);
-                    output.Append('\n');
+                    output.Append('+', 350);
+                    output.Append(Environment.NewLine);
 
                     output.Append('|');
                     return output.ToString();
