@@ -17,15 +17,6 @@ namespace MIDCOM_Tax
         public Form1()
         {
             InitializeComponent();
-
-            var x = new MIDCOM.TaxFile("test.STR");
-
-            using (StreamWriter outputFile = new StreamWriter(x.FileName))
-            {
-                outputFile.Write(x.STR);
-            }
-
-
         }
 
     }
