@@ -18,6 +18,6 @@ namespace MIDCOM_Tax
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
-        }
+        }   
     }
 }
