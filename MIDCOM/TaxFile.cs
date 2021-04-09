@@ -1,7 +1,6 @@
 ﻿using System;
 using System.IO;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -9,51 +8,6 @@ namespace MIDCOM_Tax
 {
     namespace MIDCOM
     {
-        public class TaxEntry
-        {
-            public char   taxType     = '$';    // % - Percent / $ - Per Litre       
-            public short  taxRate     = 000000; // XX.XXXX
-            public char   compoundTax = 'N';
-            public string label       = "|             |";
-
-            public string TaxRate
-            {
-                get 
-                {
-                    return this.taxType + this.taxRate.ToString("D6") + this.compoundTax;
-                }
-            }
-        
-            public string Label
-            {
-                get
-                {
-                    return label.Substring(0, 15);
-                }
-            }
-        }
-
-        public class Product
-        {
-            public const byte MaxTaxCount = 20;
-
-            public byte[] taxes = new byte[MaxTaxCount];
-
-            public string TaxCode
-            {
-                get
-                {
-                    StringBuilder tax = new(MaxTaxCount * 2); // 2 digits per tax rate. 
-
-                    foreach (byte t in taxes)
-                    {
-                        tax.Append(t.ToString("D2"));
-                    }
-                    return tax.ToString();
-                }
-            }
-        }
-    
         public class TaxFile
         {
             public const byte TaxEntryCount = 20;
@@ -179,11 +133,11 @@ namespace MIDCOM_Tax
             {
                 for (var i = 0; i < this.Taxes.Length; i++)
                 {
-                    this.Taxes[i] = new();
+                    this.Taxes[i] = new(i);
                 }
                 for (var i = 0; i < this.Products.Length; i++)
                 {
-                    this.Products[i] = new();
+                    this.Products[i] = new(i);
                 }
             }
 
