@@ -29,26 +29,17 @@ namespace MIDCOM_Tax
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.TableLayout = new System.Windows.Forms.TableLayoutPanel();
             this.taxEntryGrid = new System.Windows.Forms.DataGridView();
             this.taxCodeGrid = new System.Windows.Forms.DataGridView();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
-            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.customizeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.loadBtn = new System.Windows.Forms.Button();
+            this.expDatBtn = new System.Windows.Forms.Button();
+            this.expStrBtn = new System.Windows.Forms.Button();
             this.TableLayout.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.taxEntryGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.taxCodeGrid)).BeginInit();
-            this.menuStrip1.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // TableLayout
@@ -64,13 +55,14 @@ namespace MIDCOM_Tax
             this.TableLayout.Controls.Add(this.taxEntryGrid, 0, 0);
             this.TableLayout.Controls.Add(this.taxCodeGrid, 0, 1);
             this.TableLayout.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
-            this.TableLayout.Location = new System.Drawing.Point(14, 36);
+            this.TableLayout.Location = new System.Drawing.Point(12, 94);
             this.TableLayout.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.TableLayout.Name = "TableLayout";
             this.TableLayout.RowCount = 2;
             this.TableLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.TableLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.TableLayout.Size = new System.Drawing.Size(974, 664);
+            this.TableLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.TableLayout.Size = new System.Drawing.Size(1084, 690);
             this.TableLayout.TabIndex = 0;
             // 
             // taxEntryGrid
@@ -84,7 +76,7 @@ namespace MIDCOM_Tax
             this.taxEntryGrid.MultiSelect = false;
             this.taxEntryGrid.Name = "taxEntryGrid";
             this.taxEntryGrid.RowTemplate.Height = 25;
-            this.taxEntryGrid.Size = new System.Drawing.Size(968, 324);
+            this.taxEntryGrid.Size = new System.Drawing.Size(1078, 337);
             this.taxEntryGrid.TabIndex = 0;
             // 
             // taxCodeGrid
@@ -95,126 +87,69 @@ namespace MIDCOM_Tax
             this.taxCodeGrid.AllowUserToResizeRows = false;
             this.taxCodeGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.taxCodeGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.taxCodeGrid.Location = new System.Drawing.Point(3, 336);
+            this.taxCodeGrid.Location = new System.Drawing.Point(3, 349);
             this.taxCodeGrid.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.taxCodeGrid.Name = "taxCodeGrid";
             this.taxCodeGrid.RowTemplate.Height = 25;
-            this.taxCodeGrid.Size = new System.Drawing.Size(968, 324);
+            this.taxCodeGrid.Size = new System.Drawing.Size(1078, 337);
             this.taxCodeGrid.TabIndex = 1;
             // 
-            // menuStrip1
+            // flowLayoutPanel1
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem,
-            this.toolsToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 3, 0, 3);
-            this.menuStrip1.Size = new System.Drawing.Size(1008, 25);
-            this.menuStrip1.TabIndex = 1;
-            this.menuStrip1.Text = "menuStrip1";
+            this.flowLayoutPanel1.Controls.Add(this.loadBtn);
+            this.flowLayoutPanel1.Controls.Add(this.expDatBtn);
+            this.flowLayoutPanel1.Controls.Add(this.expStrBtn);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(15, 12);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1078, 52);
+            this.flowLayoutPanel1.TabIndex = 1;
             // 
-            // fileToolStripMenuItem
+            // loadBtn
             // 
-            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.newToolStripMenuItem,
-            this.openToolStripMenuItem,
-            this.toolStripSeparator,
-            this.saveToolStripMenuItem,
-            this.saveAsToolStripMenuItem,
-            this.toolStripSeparator1,
-            this.exitToolStripMenuItem});
-            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 19);
-            this.fileToolStripMenuItem.Text = "&File";
+            this.loadBtn.AutoSize = true;
+            this.loadBtn.Location = new System.Drawing.Point(3, 3);
+            this.loadBtn.Name = "loadBtn";
+            this.loadBtn.Size = new System.Drawing.Size(71, 30);
+            this.loadBtn.TabIndex = 0;
+            this.loadBtn.Text = "Load";
+            this.loadBtn.UseVisualStyleBackColor = true;
             // 
-            // newToolStripMenuItem
+            // expDatBtn
             // 
-            this.newToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("newToolStripMenuItem.Image")));
-            this.newToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-            this.newToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
-            this.newToolStripMenuItem.Text = "&New";
+            this.expDatBtn.AutoSize = true;
+            this.expDatBtn.Location = new System.Drawing.Point(80, 3);
+            this.expDatBtn.Name = "expDatBtn";
+            this.expDatBtn.Size = new System.Drawing.Size(97, 30);
+            this.expDatBtn.TabIndex = 1;
+            this.expDatBtn.Text = "Export .DAT";
+            this.expDatBtn.UseVisualStyleBackColor = true;
             // 
-            // openToolStripMenuItem
+            // expStrBtn
             // 
-            this.openToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("openToolStripMenuItem.Image")));
-            this.openToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
-            this.openToolStripMenuItem.Text = "&Open";
-            // 
-            // toolStripSeparator
-            // 
-            this.toolStripSeparator.Name = "toolStripSeparator";
-            this.toolStripSeparator.Size = new System.Drawing.Size(143, 6);
-            // 
-            // saveToolStripMenuItem
-            // 
-            this.saveToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("saveToolStripMenuItem.Image")));
-            this.saveToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
-            this.saveToolStripMenuItem.Text = "&Save";
-            // 
-            // saveAsToolStripMenuItem
-            // 
-            this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
-            this.saveAsToolStripMenuItem.Text = "Save &As";
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(143, 6);
-            // 
-            // exitToolStripMenuItem
-            // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
-            this.exitToolStripMenuItem.Text = "E&xit";
-            // 
-            // toolsToolStripMenuItem
-            // 
-            this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.customizeToolStripMenuItem,
-            this.optionsToolStripMenuItem});
-            this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
-            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(46, 19);
-            this.toolsToolStripMenuItem.Text = "&Tools";
-            // 
-            // customizeToolStripMenuItem
-            // 
-            this.customizeToolStripMenuItem.Name = "customizeToolStripMenuItem";
-            this.customizeToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
-            this.customizeToolStripMenuItem.Text = "&Customize";
-            // 
-            // optionsToolStripMenuItem
-            // 
-            this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
-            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
-            this.optionsToolStripMenuItem.Text = "&Options";
+            this.expStrBtn.AutoSize = true;
+            this.expStrBtn.Location = new System.Drawing.Point(183, 3);
+            this.expStrBtn.Name = "expStrBtn";
+            this.expStrBtn.Size = new System.Drawing.Size(94, 30);
+            this.expStrBtn.TabIndex = 2;
+            this.expStrBtn.Text = "Export .STR";
+            this.expStrBtn.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1008, 729);
-            this.Controls.Add(this.menuStrip1);
+            this.ClientSize = new System.Drawing.Size(1118, 797);
+            this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.TableLayout);
             this.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "MIDCOM Tax File Editor - SD & Cybercard - Standard (20,20,100) Format";
             this.TableLayout.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.taxEntryGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.taxCodeGrid)).EndInit();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -225,18 +160,10 @@ namespace MIDCOM_Tax
         private System.Windows.Forms.TableLayoutPanel TableLayout;
         private System.Windows.Forms.DataGridView taxEntryGrid;
         private System.Windows.Forms.DataGridView taxCodeGrid;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem newToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator;
-        private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem saveAsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem toolsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem customizeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem optionsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Button loadBtn;
+        private System.Windows.Forms.Button expDatBtn;
+        private System.Windows.Forms.Button expStrBtn;
     }
 }
 
